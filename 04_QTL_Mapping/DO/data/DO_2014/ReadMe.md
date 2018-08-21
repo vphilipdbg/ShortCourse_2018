@@ -2,31 +2,27 @@
 
 ### Source
 
-<https://phenome.jax.org/projects/Recla1>
+DO Phenotypes <https://phenome.jax.org/projects/Chesler4>
 
 Founder genotypes from <ftp://ftp.jax.org/MUGA/>
-
-Additional phenotypes at
-<https://phenome.jax.org/projects/Chesler4>
-(in particular, <http://phenomedoc.jax.org/MPD_projdatasets/Chesler4.csv>)
 
 
 ### Files
 
-- [`recla.json`](recla.json) - Control file in JSON format
-- [`recla_covar.csv`](recla_covar.csv) - covariate data (individuals x
+- [`DO2014.json`](DO2014.json) - Control file in JSON format
+- [`DO2014_covar.csv`](DO2014_covar.csv) - covariate data (individuals x
   covariates)
-- [`recla_pheno.csv`](recla_pheno.csv) - phenotype data (individuals x
+- [`DO2014_pheno.csv`](DO2014_pheno.csv) - phenotype data (individuals x
   phenotypes)
-- [`recla_geno.csv`](recla_geno.csv) - genotype data (markers x individuals)
-- [`do_foundergeno.csv`](recla_foundergeno.csv) - founder genotype data
+- [`DO2014_geno.csv`](DO2014_geno.csv) - genotype data (markers x individuals)
+- [`do_foundergeno.csv`](DO2014_foundergeno.csv) - founder genotype data
   (markers x founders)
-- [`recla_gmap.csv`](recla_gmap.csv) - Genetic map of markers (positions in
+- [`DO2014_gmap.csv`](DO2014_gmap.csv) - Genetic map of markers (positions in
   cM)
-- [`recla_pmap.csv`](recla_pmap.csv) - Physical map of markers (positions in
+- [`DO2014_pmap.csv`](DO2014_pmap.csv) - Physical map of markers (positions in
   NCBI38/mm10 Mbp)
 
-The data are also available as a zip file, [`recla.zip`](recla.zip).
+The data are also available as a zip file, [`DO2014.zip`](DO2014.zip).
 
 ### File format
 
@@ -52,6 +48,6 @@ Load these data into R directly from the web as follows:
 ```r
 library(qtl2)
 file <- paste0("https://raw.githubusercontent.com/rqtl/",
-               "qtl2data/master/DO_Recla/recla.zip")
-recla <- read_cross2(file)
+               "qtl2data/master/DO_Recla/DO2014.zip")
+DO2014 <- read_cross2(file)
 ```
