@@ -2,7 +2,7 @@
 
 ### Source
 
-DO Phenotypes <https://phenome.jax.org/projects/Chesler4>
+DO Phenotypes from this study <https://phenome.jax.org/projects/Chesler4>
 
 Founder genotypes from <ftp://ftp.jax.org/MUGA/>
 
