@@ -2,15 +2,15 @@
 title: "QTL analysis of behavioral traits in Diversity Outbred Mice"
 source: Rmd
 output:
-  word_document: default
   html_document:
     df_print: paged
+  word_document: default
 ---
 
 ```{r message=FALSE, echo=FALSE, warning=FALSE}
 library(qtl2)
-library(qtl2convert)
-library(qtl2db)
+library(ggplot2)
+library(GGally)
 #library(qtl2plot)
 ```
 
@@ -21,6 +21,20 @@ The data comes from a behavioral study in which Diversity Outbred (DO) mice were
 
 There are two publications associated with these data. These are [Recla JM, et al. (2014) (<i>Mamm Genome</i> 25:211-222)](https://www.ncbi.nlm.nih.gov/pubmed/24700285) and 
 [Logan RW, et al. (2014) (<i>Genes Brain Behav</i> 12:424-437)](https://www.ncbi.nlm.nih.gov/pubmed/23433259)
+
+
+
+
+## Installation of required R packages
+
+By now you would have all ready installed the required R packages necessary for the successful completion of this module. If you have, please do so now by following the instructions below by pasting them in the R console:
+
+1. [qtl2](https://kbroman.org/qtl2/) - install.packages("qtl2", repos="http://rqtl.org/qtl2cran")
+
+2. [ggplot2](https://ggplot2.tidyverse.org/) - install.packages("ggplot2")
+
+3. [GGally](https://github.com/ggobi/ggally) - install.packages("GGally")
+
 
 
 ## QTL mapping workflow
@@ -49,9 +63,6 @@ The markers are from a genotyping array called the Mouse Universal Genotyping Ar
 **Open field (OF)**
 
 ```{r plot_phenotypes_OF, warning=FALSE, message=FALSE, fig.height=8, fig.width=8, echo=FALSE}
-library(ggplot2)
-library(reshape)
-library(GGally)
 pheno <- as.data.frame(do.cross$pheno)
 OF <- grep(colnames(pheno), pattern = "^OF")
 ggpairs(pheno[,OF])
