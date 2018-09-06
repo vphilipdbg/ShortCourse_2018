@@ -12,20 +12,29 @@ In the gene expression module we will be undertaking a differential gene express
 
 `biocLite("DESeq2")`
 
+In addition to DESeq2 we will need the following R packages as well:
+
+```
+install.packages("ggplot2")
+install.packages("vsn")
+install.packages("dplyr")
+install.packages("pheatmap")
+install.packages("RColorBrewer")
+```
 
 ## QTL Mapping
 
-QTL mapping workshop will require the installation of three R libraries:
+QTL mapping workshop will require the installation of the following three R libraries:
 1. [qtl2](https://kbroman.org/qtl2/)
 2. [GGally](https://github.com/ggobi/ggally)
 3. [ggplot2](https://ggplot2.tidyverse.org/)
 
 Copy and paste the commands below in you R console:
 
-`install.packages("qtl2", repos="http://rqtl.org/qtl2cran")`
- 
-`install.packages("ggplot2")`
-
-`install.packages("GGally")`
+```
+install.packages("qtl2", repos="http://rqtl.org/qtl2cran")
+install.packages("ggplot2")`
+install.packages("GGally")`
+```
 
 
