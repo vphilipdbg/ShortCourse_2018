@@ -23,6 +23,9 @@ Step 2: Install the version **Python 3.6 version**, following the instructions o
 
 Step 3: Launch Anaconda-Navigator
 
+Step 4: From the Anaconda-Navigator UI click on the "Launch" button associated with Jupyter Notebooks (highligthed in green)
+![](../imgs/Anaconda-Navigator-UI.png)
+
 ### Python
 The installation of Jupyter Notebook takes care of the installation of Python and therefore we do not need to install Python separately.
 
