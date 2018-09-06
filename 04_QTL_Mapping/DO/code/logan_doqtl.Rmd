@@ -27,7 +27,7 @@ There are two publications associated with these data. These are [Recla JM, et a
 
 ## Installation of required R packages
 
-By now you would have all ready installed the required R packages necessary for the successful completion of this module. If you have, please do so now by following the instructions below by pasting them in the R console:
+By now you would have all ready installed the required R packages necessary for the successful completion of this module. If you have **NOT**, please do so now by following the instructions below by pasting them in the R console:
 
 1. [qtl2](https://kbroman.org/qtl2/) - install.packages("qtl2", repos="http://rqtl.org/qtl2cran")
 
