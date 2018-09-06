@@ -33,8 +33,8 @@ Copy and paste the commands below in you R console:
 
 ```
 install.packages("qtl2", repos="http://rqtl.org/qtl2cran")
-install.packages("ggplot2")`
-install.packages("GGally")`
+install.packages("ggplot2")
+install.packages("GGally")
 ```
 
 
