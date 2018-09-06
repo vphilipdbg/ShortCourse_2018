@@ -21,8 +21,7 @@ Step 1: Download Anaconda. We recommend downloading Anaconda’s latest Python 3
 
 Step 2: Install the version **Python 3.6 version**, following the instructions on the download page.
 
-Step 3: To run the notebook, run the following command at the Terminal (Mac/Linux) or Command Prompt (Windows):
-`jupyter notebook`
+Step 3: Launch Anaconda-Navigator
 
 ### Python
 The installation of Jupyter Notebook takes care of the installation of Python and therefore we do not need to install Python separately.
