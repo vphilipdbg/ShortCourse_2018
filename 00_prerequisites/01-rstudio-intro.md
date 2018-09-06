@@ -30,6 +30,8 @@ source: Rmd
 
 ## Introduction to RStudio
 
+https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html
+
 Welcome to the R portion of the Software Carpentry workshop.
 
 Throughout this lesson, we're going to teach you some of the fundamentals of
