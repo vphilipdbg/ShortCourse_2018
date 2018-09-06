@@ -9,15 +9,9 @@ Download and install the latest version of R - [download link](http://cran.stat.
 
 Download and install RStudio - [download link](https://www.rstudio.com/products/rstudio/download/#download)
 
+### Jupyter Notebook
 
-### Python
-Download and install the latest version of R - [download link](http://cran.stat.ucla.edu/)
-
-
-## Jupyter Notebook
-
-### Installing Jupyter using Anaconda
-
+#### Installing Jupyter using Anaconda
 The Jupyter Notebook Developers strongly recommend installing Python and Jupyter using the Anaconda Distribution, which includes Python, the Jupyter Notebook, and other commonly used packages for scientific computing and data science.
 
 Step 1: Download Anaconda. We recommend downloading Anaconda’s latest Python 3 version.
@@ -29,6 +23,10 @@ Step 2: Install the version **Python 3.6 version**, following the instructions o
 
 Step 3: To run the notebook, run the following command at the Terminal (Mac/Linux) or Command Prompt (Windows):
 `jupyter notebook`
+
+### Python
+The installation of Jupyter Notebook takes care of the installation of Python and therefore we do not need to install Python separately.
+
 
 
 
