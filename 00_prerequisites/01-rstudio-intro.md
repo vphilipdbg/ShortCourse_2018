@@ -28,28 +28,6 @@ keypoints:
 source: Rmd
 ---
 
-
-
-
-## Motivation
-
-Science is a multi-step process: once you've designed an experiment and collected
-data, the real fun begins! This lesson will teach you how to start this process using
-R and RStudio. We will begin with raw data, perform exploratory analyses, and learn
-how to plot results graphically. This example starts with a dataset from
-[gapminder.org](https://www.gapminder.org) containing population information for many
-countries through time. Can you read the data into R? Can you plot the population for
-Senegal? Can you calculate the average income for countries on the continent of Asia?
-By the end of these lessons you will be able to do things like plot the populations
-for all of these countries in under a minute!
-
-## Before Starting The Workshop
-
-Please ensure you have the latest version of R and RStudio installed on your machine. This is important, as some packages used in the workshop may not install correctly (or at all) if R is not up to date.
-
-[Download and install the latest version of R here](https://www.r-project.org/)
-[Download and install RStudio here](https://www.rstudio.com/)
-
 ## Introduction to RStudio
 
 Welcome to the R portion of the Software Carpentry workshop.
@@ -73,12 +51,12 @@ When you first open RStudio, you will be greeted by three panels:
   * Environment/History (tabbed in upper right)
   * Files/Plots/Packages/Help/Viewer (tabbed in lower right)
 
-![RStudio layout](../fig/01-rstudio.png)
+![RStudio layout](../imgs/01-rstudio.png)
 
 Once you open files, such as R scripts, an editor panel will also open
 in the top left.
 
-![RStudio layout with .R file open](../fig/01-rstudio-script.png)
+![RStudio layout with .R file open](../imgs/01-rstudio-script.png)
 
 
 ## Work flow within RStudio
