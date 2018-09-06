@@ -23,4 +23,8 @@ The [Jupyter Notebook](http://jupyter.org/) is an open-source web application pl
 We suggest downloading all the contents at once to a location of your choosing on your laptop.
 
 ### Step 1
+![Step1](imgs/Step1.png)
+
+
 ### Step 2
+![Step2](imgs/Step2.png)
