@@ -6,9 +6,10 @@ The following R packages are required for the successful completion of the follo
 2. QTL Mapping 
 
 ## Gene Expression
-In the gene expression module we will be undertaking a differential gene expression analysis. For this, we will make use of the [DESeq2]() R package. To install this package, copy and paste the commands below in your R console:
+In the gene expression module we will be undertaking a differential gene expression analysis. For this, we will make use of the [DESeq2](https://www.bioconductor.org/packages/release/bioc/html/DESeq2.html) R package. To install this package, copy and paste the commands below in your R console:
 
 `source("https://bioconductor.org/biocLite.R")`
+
 `biocLite("DESeq2")`
 
 
