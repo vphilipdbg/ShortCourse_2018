@@ -2,10 +2,11 @@
 
 Welcome to the Addiction ShortCourse Workshop Homepage! On here, you will find the datasets and scripts for each afternoons workshop organized in a sequential manner. But before we dive right in to that, here are some details regarding the contents you will find here along with software and programming enviornments we will be using. 
 
-## Ogranization of Course Content
+## Organization of Course Content
 The course content has been organing into folders reflecting each of the six hands-on workshops. These folders have been arranged in a sequential manner, reflecting the flow of the course. The instructions for the installation of software and associated materials (R packages, Python libraries) are contained in the folder **00_prerequisites**.
 
 ## Software and Programming enviornments
+These softwares and programming enviornments work on both Macs and PCs.
 
 ### Python
 You can learn more about Python [here](https://www.python.org/about/) but very briefly, Python is an interpreted, object-oriented, high-level programming language. Python is a very useful and robust language that allows for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python supports several modules and packages for statistical, genentics and genomics analysis, making it a programmiung language of choice in our area of work. Last but not the least, Python facilitates **reproducible** analysis, like the other programming languages we will be using in this ShortCourse.
@@ -28,3 +29,6 @@ We suggest downloading all the contents at once to a location of your choosing o
 
 ### Step 2
 ![Step2](imgs/Step2.png)
+
+### Step 3
+Unzip the zipped file to now have all the contents needed for this workshop on your local system.
