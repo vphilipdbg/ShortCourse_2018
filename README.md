@@ -36,4 +36,4 @@ Unzip the zipped file to now have all the contents needed for this workshop on y
 ### Step 4
 Please begin by going to the **00_prerequisites** folder before doing anything else. This folder contains installation instructions for softwares and libraries that are required for the successful completion of the workshop modules. 
 
-***Please note that you will most likely need administrative privileges to install the software***
+## ***Please note that you will most likely need administrative privileges to install the software***
