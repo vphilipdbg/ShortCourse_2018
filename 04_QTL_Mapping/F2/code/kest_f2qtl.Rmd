@@ -92,8 +92,6 @@ plot(bxa.scan2a)
 summary(bxa.scan2a, what="best", thresholds=c(9.1, 7.1, 6.3, 6.3, 3.3))
 ```
 
-
-
 ### Multiple QTL mapping
 
 We begin by first imputing genotypes. Followed by creating a QTL object that allows us to model the effects from multiple loci jointly.
