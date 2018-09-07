@@ -156,24 +156,9 @@ Now let us fit a linear model that assesses the main effects of strain and sex i
 
 
 ```python
-import pandas as pd
 from statsmodels.formula.api import ols
 from statsmodels.stats.anova import anova_lm
 from statsmodels.graphics.factorplots import interaction_plot
-import matplotlib.pyplot as plt
-from scipy import stats
-
-def eta_squared(aov):
-    aov['eta_sq'] = 'NaN'
-    aov['eta_sq'] = aov[:-1]['sum_sq']/sum(aov['sum_sq'])
-    return aov
-
-def omega_squared(aov):
-    mse = aov['sum_sq'][-1]/aov['df'][-1]
-    aov['omega_sq'] = 'NaN'
-    aov['omega_sq'] = (aov[:-1]['sum_sq']-(aov[:-1]['df']*mse))/(sum(aov['sum_sq'])+mse)
-    return aov
-
 
 formula = 'value ~ C(sex) + C(strain) + C(strain):C(sex)'
 model = ols(formula, animaldata).fit()
