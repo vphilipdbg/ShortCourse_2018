@@ -22,6 +22,7 @@ biocLite("vsn")
 
 #libraries for table manipulations
 install.packages("DT")
+install.packages("plyr")
 
 #libraries for visualization
 install.packages("ggplot2")
