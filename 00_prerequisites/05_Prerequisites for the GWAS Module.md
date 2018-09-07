@@ -17,11 +17,11 @@ The datasets and tools that will be used in the workshop will leverage publicly 
 
 - SNP-heritability and genetic correlations (LDHub):
   - http://ldsc.broadinstitute.org/ldhub/
-[](../imgs/fuma_signup.png)
+![](../imgs/fuma_signup.png)
 
 - Functional annotation (FUMA):
   - http://fuma.ctglab.nl/login
-[](../imgs/fuma_signup.png)
+![](../imgs/fuma_signup.png)
 
 **You will need to create an LDHub and FUMA account (using a gmail account)**
 
