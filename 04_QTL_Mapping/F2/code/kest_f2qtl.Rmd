@@ -1,0 +1,114 @@
+---
+title: "QTL analysis of morphine tolerance in a (B6 × 129)F~2~ cross"
+source: Rmd
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+
+```{r message=FALSE, echo=FALSE, warning=FALSE}
+library(qtl)
+library(ggplot2)
+library(GGally)
+#library(qtl2plot)
+```
+
+This tutorial will take you through the process of mapping a QTL and searching for candidate genes using morphine tolerance as the trait assayed in an F~2~ population.
+
+The data comes from a behavioral study in which 224 male and female mice from an (B6 × 129)F~2~ cross. The trait of interest is **jumping frequency**. Prior to mapping this trait was subsequently transformed by taking its square root in order to achieve normality.
+
+Please refer to the following publication for additional details [Kest , et al. (2004) (<i>Mamm Genome</i> 8:610-7)](https://rd.springer.com/article/10.1007/s00335-004-2367-3)
+
+## Installation of required R packages
+
+By now you would have all ready installed the required R packages necessary for the successful completion of this module. If you have **NOT**, please do so now by following the instructions below by pasting them in the R console:
+
+1. [qtl](http://www.rqtl.org/) - install.packages("qtl")
+
+### Load and explore the data
+
+```{r load_data, warning=FALSE}
+bxa <- read.cross(format="csv", file="../data/Chesler2012_B6x129S_B37_Data.csv", genotypes = c("B","H","S"), alleles = c("B","S"))
+summary(bxa)
+```
+
+### Genome scans
+
+### Set up for scanning by calculating genotype probabilities.
+```{r genoprobs}
+bxa <- calc.genoprob(bxa, step=1, stepwidth="fixed", map.function="c-f", err=0.002)
+```
+
+
+
+###  One dimensional genome scan 
+```{r scanone}
+bxa.scan1a <- scanone(bxa, pheno.col="Avg1to10", method="hk")
+plot(bxa.scan1a)
+```
+
+###  Run permutations.
+```{r scanone_permutations}
+bxa.perm1a <-scanone(bxa, pheno.col="Avg1to10", method="hk", n.perm=100, perm.Xsp=TRUE)
+```
+
+###  Plot the genome scan.
+```{r plot_scanone}
+plot(bxa.scan1a)
+add.threshold(bxa.scan1a, perms=bxa.perm1a, alpha=0.01,lty="dashed",lwd=2,col="blue")
+add.threshold(bxa.scan1a, perms=bxa.perm1a, alpha=0.05,lty="dashed",lwd=2,col="red")
+add.threshold(bxa.scan1a, perms=bxa.perm1a, alpha=0.63,lty="dashed",lwd=2,col="green")
+```
+
+### Tabular summary options	
+```{r summmarize_scan1}
+summary(bxa.scan1a)
+summary(bxa.scan1a, perms=bxa.perm1a, alpha=0.10)
+summary(bxa.scan1a, perms=bxa.perm1a, alpha=0.10, format="tabByCol",ci.function="lodint")
+```
+
+### Find nearest marker	
+
+Now let's find the nearest marker to the chromosome 1 peak.
+```{r find_nearest_marker}
+find.marker(bxa, 4, 11.3)
+```
+
+### Two dimensional genome scan 
+```{r scantwo}
+bxa.scan2a <- scantwo(bxa, pheno.col="Avg1to10", method="hk")
+```
+
+
+### Plot the pairwise scan
+```{r plot_scanone}
+plot(bxa.scan2a)
+```
+
+### Scantwo sumary
+```{r summmarize_scan2}
+summary(bxa.scan2a, what="best", thresholds=c(9.1, 7.1, 6.3, 6.3, 3.3))
+```
+
+
+
+### Multiple QTL mapping
+
+We begin by first imputing genotypes. Followed by creating a QTL object that allows us to model the effects from multiple loci jointly.
+
+```{r fit_mqm}
+bxa <- sim.geno(bxa, step=2, n.draws=128, err=0.001)
+
+# Create a QTL object by pulling out imputed genotypes at selected loci.
+#qtl <- makeqtl(bxa, chr=c(1, 5, 10), pos=c(56, 23, 42))
+qtl <- makeqtl(bxa, chr=c(4, 18), pos=c(11.3, 57.9))
+qtl
+plot(qtl)
+
+# Fit a model with selected QTL loci.
+#out.fq <- fitqtl(bxa, qtl=qtl, formula = y ~ Q1 + Q2 + Q3)
+out.fq <- fitqtl(bxa, qtl=qtl, formula = y ~ Q1 + Q2 + Q1:Q2)
+summary(out.fq)
+```
