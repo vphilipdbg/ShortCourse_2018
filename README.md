@@ -32,3 +32,8 @@ We suggest downloading all the contents at once to a location of your choosing o
 
 ### Step 3
 Unzip the zipped file to now have all the contents needed for this workshop on your local system.
+
+### Step 4
+Please begin by going to the **00_prerequisites** folder before doing anything else. This folder contains installation instructions for softwares and libraries that are required for the successful completion of the workshop modules. 
+
+***Please note that you will most likely need administrative privileges to install the software***
