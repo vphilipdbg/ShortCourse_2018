@@ -1,4 +1,4 @@
-# Addiction ShortCourse 2018 - Prequisites
+# Addiction ShortCourse 2018 - Prerequisites
 
 ## Downloading and Installation of Software and Programming enviornments
 
