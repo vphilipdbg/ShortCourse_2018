@@ -135,7 +135,7 @@ vsd <- vst(dds, blind=FALSE)
 
 The code used to create the above plots are provided below, but have not be run.
 ```{r plot_transform, eval = FALSE, warning=FALSE, message=FALSE} 
-#mean-sd plot for lobarirthm transform
+#mean-sd plot for logarirthm transform
 meanSdPlot(assay(ntd))
 
 #mean-sd plot for VST transform
