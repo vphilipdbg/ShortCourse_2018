@@ -2,12 +2,12 @@
 title: "Differential Gene Expression Analysis in the CC/DO founders Hippocampus"
 source: Rmd
 output:
+  word_document: default
   html_document:
     df_print: paged
-  word_document: default
 ---
 
-```{r message=FALSE, echo=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE}
 library(DESeq2)
 library(vsn)
 library(RColorBrewer)
@@ -309,7 +309,7 @@ write.csv(topGOResults, file = "../results/DiffExp_Hp_Strain_by_Sex_topGOResults
 
 Below is a searchable table of the enrichment results.
 
-```{r topGO_table, warning=FALSE, message=FALSE}
+```{r topGO_table, warning=FALSE, message=FALSE, eval=FALSE}
 datatable(topGOResults)
 ```
 
