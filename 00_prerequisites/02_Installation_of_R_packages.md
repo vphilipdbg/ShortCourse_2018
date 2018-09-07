@@ -15,11 +15,22 @@ In the gene expression module we will be undertaking a differential gene express
 In addition to DESeq2 we will need the following R packages as well:
 
 ```
+source("https://bioconductor.org/biocLite.R")
+#libraries for gene expression analysis
+biocLite("DESeq2")
+biocLite("vsn")
+
+#libraries for table manipulations
+install.packages("DT")
+
+#libraries for visualization
 install.packages("ggplot2")
-install.packages("vsn")
-install.packages("dplyr")
 install.packages("pheatmap")
 install.packages("RColorBrewer")
+
+#libraries for gene annotation and enrichement analysis
+biocLite("org.Mm.eg.db")
+biocLite("topGO")
 ```
 
 ## QTL Mapping
