@@ -225,7 +225,7 @@ abline(h = c(thr63), col = "blue", lwd = 1)
 ```
 ![](../figs/Scan1_climbing_freq_w_thr.png)
 
-The peak on Chr 6 is above the red significance line.
+The peak on Chr 6 is above the green (p<0.10) significance line.
 #### Finding LOD peaks
 We can then plot the QTL scan. Note that you must provide the marker map, which we loaded earlier in the MUGA SNP data.
 
