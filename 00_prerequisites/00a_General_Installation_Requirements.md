@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Addiction ShortCourse 2018 - Prerequisites
 
 ## Downloading and Installation of Software and Programming enviornments

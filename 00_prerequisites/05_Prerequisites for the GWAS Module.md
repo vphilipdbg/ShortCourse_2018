@@ -1,11 +1,17 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 
 # Recent methods for polygenic analysis of genome-wide data
 
 ## Primary objective
 The primary objective of this module is to:
 - Estimate SNP-heritability
-- Perform functional mapping and annotation of genetic associations
 - Calculate genetic correlations
+- Perform functional mapping and annotation of genetic associations
+
 
 
 ## Dataset and tools
@@ -26,4 +32,8 @@ The datasets and tools that will be used in the workshop will leverage publicly 
 ![](../imgs/fuma_signup.png)
 
 **You will need to create an user account to use FUMA**
+
+However, if for some reason there are difficulties in doing so we have created the following account:
+
+- account: jaxpolygenicity@gmail.com; password: jaxpolygenicity2018
 
