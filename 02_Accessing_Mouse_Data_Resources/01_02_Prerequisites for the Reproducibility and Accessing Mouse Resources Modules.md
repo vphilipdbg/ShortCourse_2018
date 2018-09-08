@@ -1,46 +1,27 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 
-# Installation of required R packages
+Installation of Jupyter Notebooks and Python, which come bundled with Anaconda Navigator are the only prerequisites. If you have already installed these, then please ignore the section below.
 
-The following R packages are required for the successful completion of the following workshop modules:
-1. Gene Expression 
-2. QTL Mapping 
+### Jupyter Notebook
 
-## Gene Expression
-In the gene expression module we will be undertaking a differential gene expression analysis. For this, we will make use of the [DESeq2](https://www.bioconductor.org/packages/release/bioc/html/DESeq2.html) R package. To install this package, copy and paste the commands below in your R console:
+#### Installing Jupyter using Anaconda
+The Jupyter Notebook Developers strongly recommend installing Python and Jupyter using the Anaconda Distribution, which includes Python, the Jupyter Notebook, and other commonly used packages for scientific computing and data science.
 
-`source("https://bioconductor.org/biocLite.R")`
+Step 1: Download Anaconda. We recommend downloading Anaconda’s latest Python 3 version.
 
-`biocLite("DESeq2")`
+  For macOS - [here](https://www.anaconda.com/download/#macos)
+  For Windows - [here](https://www.anaconda.com/download/#windows)
 
-In addition to DESeq2 we will need the following R packages as well:
+Step 2: Install the version **Python 3.6 version**, following the instructions on the download page.
 
-```
-source("https://bioconductor.org/biocLite.R")
-#libraries for gene expression analysis
-biocLite("DESeq2")
-biocLite("vsn")
+Step 3: Launch Anaconda-Navigator
 
-#libraries for table manipulations
-install.packages("DT")
-install.packages("plyr")
+Step 4: From the Anaconda-Navigator UI click on the "Launch" button associated with Jupyter Notebooks (highligthed in green)
+![](../imgs/Anaconda-Navigator-UI.png)
 
-#libraries for visualization
-install.packages("ggplot2")
-install.packages("pheatmap")
-install.packages("RColorBrewer")
-
-#libraries for gene annotation and enrichement analysis
-biocLite("org.Mm.eg.db")
-biocLite("topGO")
-```
-
-## QTL Mapping
-
-QTL mapping workshop will require the installation of the following  R libraries. Copy and paste the commands below in you R console:
-
-```
-install.packages("qtl2", repos="http://rqtl.org/qtl2cran")
-install.packages("GGally")
-```
-
-
+### Python
+The installation of Jupyter Notebook takes care of the installation of Python and therefore we do not need to install Python separately.

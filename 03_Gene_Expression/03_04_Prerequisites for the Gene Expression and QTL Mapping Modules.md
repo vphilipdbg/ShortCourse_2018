@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 
 # Installation of required R packages
 
@@ -43,4 +48,11 @@ install.packages("qtl2", repos="http://rqtl.org/qtl2cran")
 install.packages("GGally")
 ```
 
+
+# External datasets that need to be downloaded 
+
+The QTL mapping workshop, particularly the one on Diversity Outbred mice, has a section on **SNP Association Mapping** that requires the following two files:
+
+- cc_variants.sqlite [Download here](https://doi.org/10.6084/m9.figshare.5280229.v2) : These are the variants in the Collaborative Cross founders (3 GB)
+- mouse_genes.sqlite [Download here](https://doi.org/10.6084/m9.figshare.5280238.v4) : full set of mouse gene annotations (677 MB)
 
