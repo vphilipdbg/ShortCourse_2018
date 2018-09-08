@@ -12,6 +12,7 @@ output:
 library(qtl2)
 library(ggplot2)
 library(GGally)
+library(reshape)
 #library(qtl2plot)
 ```
 
@@ -68,29 +69,25 @@ pheno <- as.data.frame(do.cross$pheno)
 OF <- grep(colnames(pheno), pattern = "^OF")
 ggpairs(pheno[,OF])
 ```
-
+![](../figs/OF_corrs.png)
 
 **Light Dark (LD)**
 
 ```{r plot_phenotypes_LD, warning=FALSE, message=FALSE, fig.height=8, fig.width=8, echo=FALSE}
-library(ggplot2)
-library(reshape)
-library(GGally)
 pheno <- as.data.frame(do.cross$pheno)
 LD <- grep(colnames(pheno), pattern = "^LD")
 ggpairs(pheno[,LD])
 ```
+![](../figs/LD_corrs.png)
 
 **Tail Suspension Test (TST)**
 
 ```{r plot_phenotypes_TST, warning=FALSE, message=FALSE, fig.height=8, fig.width=8, echo=FALSE}
-library(ggplot2)
-library(reshape)
-library(GGally)
 pheno <- as.data.frame(do.cross$pheno)
 TS <- grep(colnames(pheno), pattern = "^TS")
 ggpairs(pheno[,TS])
 ```
+![](../figs/TS_corrs.png)
 
 ## QTL mapping of climbing frequency in the tail suspension test
 ![](../figs/mapping-workflow.png)
@@ -111,13 +108,15 @@ A closer look at the **eight** haplotypes for just the Chr 1 markers and couple 
 #### Sample 1  - Chr 1
 ```{r sample1, echo=FALSE}
 plot_genoprob(aprobs, map=do.cross$gmap, chr=1, ind = 10)
+
 ```
+![](../figs/sample1_chr1_genoprobs.png)
 
 #### Sample 10  - Chr 1
 ```{r sample10, echo=FALSE}
 plot_genoprob(aprobs, map=do.cross$gmap, chr=1, ind = 10)
 ```
-
+![](../figs/sample10_chr1_genoprobs.png)
 
 
 #### **Calculate a kinship matrix**
@@ -129,14 +128,12 @@ image(1:nrow(kinship[[1]]), 1:ncol(kinship[[1]]), kinship[[1]][,ncol(kinship[[1]
       breaks = 0:100/100, col = heat.colors(length(0:100) - 1))
 
 ```
+![](../figs/Kinship.png)
 
 The figure above shows kinship between all pairs of samples. White ( = 1) indicates no kinship and red ( = 0) indicates full kinship. Orange values indicate varying levels of kinship between 0 and 1. The white diagonal of the matrix indicates that each sample is identical to itself. The lighter yellow blocks off of the diagonal may indicate siblings or cousins.
 
 #### **Covariates**
 ```{r explore_covar, echo=FALSE, warning=FALSE, message=FALSE}
-library(ggplot2)
-library(reshape)
-library(GGally)
 pheno <- as.data.frame(do.cross$pheno)
 covar <- as.data.frame(do.cross$covar)
 
@@ -154,6 +151,14 @@ ggplot(TS.pheno, aes(coat_color,TS_frequency_climbing)) + geom_boxplot() + geom_
 
 
 ```
+![](../figs/climbing_freq_sex.png)
+![](../figs/climbing_freq_season.png)
+![](../figs/climbing_freq_gen.png)
+![](../figs/climbing_freq_phenotypinggroup.png)
+![](../figs/climbing_freq_phenotypingsubgroup.png)
+![](../figs/climbing_freq_coat_color.png)
+
+
 
 #### **Including covariates in the mapping model**
 ```{r addcovar}
@@ -195,6 +200,7 @@ LOD score, in blue.
 ```{r plot_scan1_TS_frequency_climbing}
 plot_scan1(x = qtl.climb, map = do.cross$pmap, main = "Climbing frequency")
 ```
+![](../figs/Scan1_climbing_freq.png)
 
 #### Performing a permutation test
 
@@ -217,6 +223,7 @@ abline(h = c(thr95), col = "red", lwd = 3)
 abline(h = c(thr90), col = "green", lwd = 2)
 abline(h = c(thr63), col = "blue", lwd = 1)
 ```
+![](../figs/Scan1_climbing_freq_w_thr.png)
 
 The peak on Chr 6 is above the red significance line.
 #### Finding LOD peaks
@@ -252,6 +259,7 @@ This produces an object containing estimates of each of the eight DO founder all
 ```{r coef_plot, fig.width=8, fig.height=6, warning=FALSE, error=FALSE}
 plot_coefCC(x = coef06, map = do.cross$pmap, scan1_output = qtl.climb, main = "Climbing frequency")
 ```
+![](../figs/Scan1Coeff_climbing_freq.png)
 
 The top panel shows the eight founder allele effects (or model coefficients) along Chr 6. The founder allele effects are centerd at zero and the units are the same as the phenotype. You can see that DO mice containing the PWK/PhJ allele (red) have higher climbing frequencies relative to the other seven founders. Additional DO mice with C57BL/6J (grey) and PWK/PhJ (green) alleles have lower climbing frequncies. This means that the  PWK/PhJ allele is associated with increased climbing and is potentially indicative of lower anxeity and higher exploration. The bottom panel shows the LOD score, with the support interval for the peak shaded blue. 
 
@@ -301,6 +309,7 @@ The `assoc` object is a list containing two objects: the LOD scores for each uni
 ```{r assoc_fig, fig.width=9, fig.height=6, warning=FALSE, error=FALSE}
 plot_snpasso(scan1output = assoc$lod, snpinfo = assoc$snpinfo, main = "Climbing frequency")
 ```
+![](../figs/Snpasso_climbing_freq.png)
 
 This plot shows the LOD score for each SNP in the QTL interval. The SNPs occur in "shelves" because all of the SNPs in a haplotype block have the same founder strain pattern. The SNPs with the highest LOD scores are the ones for which CAST/EiJ contributes the alternate allele.
 
@@ -321,6 +330,7 @@ Next, we will create a plot with two panels: one containing the association mapp
 ```{r plot_assoc2, warning=FALSE,fig.width=12,fig.height=12, error=FALSE, echo=FALSE}
 plot_snpasso(assoc$lod, assoc$snpinfo, main = "Climbing frequency", genes=genes)
 ```
+![](../figs/Snpasso_climbing_freq_w_genes.png)
 
 #### Identification of Candidate Genes
 
