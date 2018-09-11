@@ -8,6 +8,8 @@ The course content has been organing into folders reflecting each of the six han
 ## Software and Programming enviornments
 These softwares and programming enviornments work on both Macs and PCs.
 
+## ***Please note that you will most likely need administrative privileges to install the software***
+
 ### Python
 You can learn more about Python [here](https://www.python.org/about/) but very briefly, Python is an interpreted, object-oriented, high-level programming language. Python is a very useful and robust language that allows for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python supports several modules and packages for statistical, genentics and genomics analysis, making it a programmiung language of choice in our area of work. Last but not the least, Python facilitates **reproducible** analysis, like the other programming languages we will be using in this ShortCourse.
 
@@ -36,4 +38,3 @@ Unzip the zipped file to now have all the contents needed for this workshop on y
 ### Step 4
 Please begin by going to the **00_prerequisites** folder before doing anything else. This folder contains installation instructions for softwares and libraries that are required for the successful completion of the workshop modules. 
 
-## ***Please note that you will most likely need administrative privileges to install the software***
