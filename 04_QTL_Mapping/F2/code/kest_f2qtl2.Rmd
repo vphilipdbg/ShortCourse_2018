@@ -42,7 +42,7 @@ By now you would have all ready installed the required R packages necessary for 
 ### Load and explore the data
 
 ```{r load_data, warning=FALSE}
-bxa <- read.cross(format="csv", file="../data/Chesler2012_B6x129S_B37_Data.csv", genotypes = c("B","H","S"), alleles = c("B","S"))
+bxa <- read.cross(format="csv", file="../data/tolerance4.csv", genotypes = c("A","H","B"), alleles = c("A","B"))
 summary(bxa)
 ```
 
@@ -81,7 +81,7 @@ scan1() takes as input the genotype probabilities, a matrix of phenotypes, optio
 
 ```{r calc_genoprob}
 Xcovar <- get_x_covar(bxa.qtl2)
-out <- scan1(pr, bxa.qtl2$pheno[,3], Xcovar=Xcovar)
+out <- scan1(pr, bxa.qtl2$pheno[,'sqrdep'], Xcovar=Xcovar)
 ```
 
 #### Plot the genome scan
@@ -91,7 +91,7 @@ plot(out, map, col="violetred")
 
 #### Performing a permutation test
 ```{r permutations}
-operm <- scan1perm(pr, bxa.qtl2$pheno[,3], Xcovar=Xcovar, n_perm=100)
+operm <- scan1perm(pr, bxa.qtl2$pheno[,'sqrdep'], Xcovar=Xcovar, n_perm=100)
 thr <- summary(operm, alpha=c(0.01, 0.05, 0.10, 0.63))
 ```
 
