@@ -20,7 +20,8 @@
   - [ ] mouse_genes.sqlite
 - [ ] Copy external datasets to ShortCourse_2018-master -> 04_QTL_Mapping -> DO -> data
 
-#check R library installations
+## check R library installations
+```
 library(DESeq2)
 library(vsn)
 library(RColorBrewer)
@@ -34,3 +35,4 @@ library(qtl2)
 library(ggplot2)
 library(GGally)
 library(reshape)
+```
